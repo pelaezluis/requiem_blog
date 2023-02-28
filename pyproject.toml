@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "requiem-blog"
+version = "0.1.0"
+description = ""
+authors = ["pelaezluis <luispelaezbedoya@gmail.com>"]
+readme = "README.md"
+packages = [{include = "requiem_blog"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.92.0"
+alembic = "^1.9.4"
+sqlmodel = "^0.0.8"
+python-jose = "^3.3.0"
+cryptography = "^39.0.1"
+SQLAlchemy = "1.4.40"
+fastapi-async-sqlalchemy = "^0.3.12"
+uvicorn = "^0.20.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
