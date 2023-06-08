@@ -16,6 +16,7 @@ cryptography = "^39.0.1"
 SQLAlchemy = "1.4.40"
 fastapi-async-sqlalchemy = "^0.3.12"
 uvicorn = "^0.20.0"
+datetime = "^5.1"
 
 
 [build-system]
