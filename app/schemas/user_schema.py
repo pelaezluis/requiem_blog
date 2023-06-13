@@ -1,7 +1,6 @@
 from pydantic import BaseModel
-from typing import Union
 
-from models.user_model import User
+from app.models.user_model import User
 
 
 class UserBasic(BaseModel):

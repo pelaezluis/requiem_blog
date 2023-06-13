@@ -1,7 +1,7 @@
 from datetime import datetime
-from typing import Optional,List
+from typing import Optional
 from sqlmodel import Field, SQLModel, Relationship
-from models.post_model import Post
+from app.models.post_model import Post
 
 
 
