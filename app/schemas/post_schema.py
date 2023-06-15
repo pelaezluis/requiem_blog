@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-import models.post_model  as modelpost
+import app.models.post_model  as modelpost
 
 class PostCreate(BaseModel):
     title : str

@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from typing import Union
 
 from app.models.user_model import User
 
@@ -28,3 +29,11 @@ class UserUpdate(BaseModel):
 
 class UserRead(User):
     pass
+
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+class TokenData(BaseModel):
+    username: Union[str,None] = None
