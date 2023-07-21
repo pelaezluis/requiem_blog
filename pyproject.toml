@@ -4,7 +4,6 @@ version = "0.1.0"
 description = ""
 authors = ["pelaezluis <luispelaezbedoya@gmail.com>"]
 readme = "README.md"
-packages = [{include = "requiem_blog"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
@@ -19,6 +18,7 @@ uvicorn = "^0.20.0"
 datetime = "^5.1"
 passlib = "^1.7.4"
 python-multipart = "^0.0.6"
+bcrypt = "^4.0.1"
 
 
 [build-system]
