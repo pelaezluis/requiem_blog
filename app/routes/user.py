@@ -29,6 +29,7 @@ def get_user(user_id: int, current_user: UserRead = Depends(get_current_user)):
 # Obtener una lista de usuarios
 @router.get("/users", response_model=list[UserBasic])
 def get_users(current_user: UserRead = Depends(get_current_user)):
+    print("entro")
     return list(users.values())
 
 @router.put("/users/{user_id}", response_model=UserRead)

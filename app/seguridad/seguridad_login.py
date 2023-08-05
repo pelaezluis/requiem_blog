@@ -23,13 +23,11 @@ def get_password_hash(password):
     return pwd_context.hash(password)
 
 
-def authenticate_user(email: str, password: str):
+def authenticate_user(username: str, password: str):
     user = None
-    print("entra")
     for user_id, user_data in users.items():
         print(user_data)
-        if user_data.email == email:
-            print("bien")
+        if user_data.username == username:
             user = user_data
             break
 
@@ -58,11 +56,11 @@ def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
 
 def get_current_user(token: str = Depends(oauth2_scheme)):
     try:
-        print("token",token)
+        #print("token",token)
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-        print("payload", payload)
+        #print("payload", payload)
         username = payload.get("sub")
-        print("username", username)
+        #print("username", username)
         if username is None:
             raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid token")
         token_data = TokenData(username=username)
