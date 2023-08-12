@@ -37,3 +37,8 @@ class Token(BaseModel):
 
 class TokenData(BaseModel):
     username: Union[str,None] = None
+
+### agregé esto
+class LoginData(BaseModel):
+    username: str
+    password: str
