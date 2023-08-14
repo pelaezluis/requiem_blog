@@ -10,7 +10,7 @@ class PostCreate(BaseModel):
 
 class PostUpdate(BaseModel):
     title : str
-    descrtiption:str
+    descrtiption:str 
     post:str
     image_url: str
     song_url: str

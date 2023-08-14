@@ -9,10 +9,10 @@ class ViewBase(SQLModel):
     id:Optional[int]=Field(default=None, primary_key=True,index=True,nullable=False)
     view_count: int = Field(nullable=False)
     post_id: int= Field(foreign_key="posts.id")
-    last_view : Optional[datetime] = Field(default=None, nullable=True)
+    last_view : Optional[datetime] = Field(default=None, nullable=False)
 
 class View(ViewBase):
-    post:Post = Relationship( back_populates="view")
+    posts:Post = Relationship( back_populates="view")
 
 
 
