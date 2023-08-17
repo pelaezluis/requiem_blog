@@ -3,8 +3,7 @@ from sqlmodel import SQLModel,Field, Relationship
 from typing import Optional
 from datetime import datetime
 
-
-class PostBase(SQLModel, table=True):
+class PostBase(SQLModel):
     __tablename__ = "posts"
     id : Optional[int]=Field(default=None, primary_key=True,index=True,nullable=False)
     user_id: int = Field(foreign_key="users.id")
@@ -18,7 +17,9 @@ class PostBase(SQLModel, table=True):
 
 
 
-class Post(PostBase):
+class Post(PostBase,table=True):
     user:"User" = Relationship(back_populates="posts")
     view :"View"= Relationship(back_populates="posts")
+
+
     

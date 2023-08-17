@@ -11,7 +11,7 @@ class ViewBase(SQLModel):
     post_id: int= Field(foreign_key="posts.id")
     last_view : Optional[datetime] = Field(default=None, nullable=False)
 
-class View(ViewBase):
+class View(ViewBase, table=True):
     posts:Post = Relationship( back_populates="view")
 
 

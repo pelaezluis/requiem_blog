@@ -5,7 +5,7 @@ from app.models.post_model import Post
 
 
 
-class UserBase(SQLModel, table=True):
+class UserBase(SQLModel):
     __tablename__ = "users"
 
     id : Optional[int]=Field(default=None, primary_key=True,index=True,nullable=False)
@@ -22,5 +22,5 @@ class UserBase(SQLModel, table=True):
 
 
     
-class User(UserBase):
+class User(UserBase,table=True):
     posts:Post = Relationship(back_populates="user")

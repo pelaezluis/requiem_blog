@@ -1,22 +1,28 @@
 from pydantic import BaseModel
-import app.models.post_model  as modelpost
+from app.models.post_model import Post
+from datetime import datetime
+from typing_extensions import Optional
 
+    
 class PostCreate(BaseModel):
     title : str
-    descrtiption:str
-    post:str
-    image_url: str
-    song_url: str
-
-class PostUpdate(BaseModel):
-    title : str
-    descrtiption:str 
+    description:str
     post:str
     image_url: str
     song_url: str
     
-class PostDelete(BaseModel):
-    id:int
 
-class PostRead(modelpost.Post):
+
+
+
+class PostUpdate(BaseModel):
+    title : str
+    description:str 
+    post:str
+    image_url: str
+    song_url: str
+    update_at: Optional[datetime] = None
+    
+    
+class PostRead(Post):
     pass
